@@ -1,5 +1,10 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
+import styled from 'styled-components'
+
+const ChartWrapper = styled.div`
+  width: 80%
+`
 
 class StackedBar extends Component {
 
@@ -81,19 +86,14 @@ class StackedBar extends Component {
 
   render() {
     return (
-      <div className="blahbla-app">
-        <div className="haha-row">
-          <div className="really-mixed-chart">
-            <Chart
-              options={this.state.options}
-              series={this.state.series}
-              type="bar"
-              height="300px"
-              width="500"
-            />
-          </div>
-        </div>
-      </div>
+      <ChartWrapper>
+        <Chart
+          options={this.state.options}
+          series={this.state.series}
+          type="bar"
+          width="100%"
+        />
+      </ChartWrapper>
     );
   }
 }
