@@ -8,12 +8,12 @@ const ChartWrapper = styled.div`
 
 class StackedBar extends Component {
 
-  MOCK_ITERATION = 10
+  MOCK_ITERATION = 100
   
   mockCategory = () => {
     let categories = []
     for (let i=1 ; i<=this.MOCK_ITERATION ; i++)
-      categories.push(`${i}`)
+      categories.push(i)
     return categories
   }
 
@@ -32,12 +32,11 @@ class StackedBar extends Component {
       options: {
         chart: {
           stacked: true,
+          zoom: {
+            enabled: true
+          },
           toolbar: {
             show: true
-          },
-          zoom: {
-            enabled: true,
-            type: "y"
           }
         },
         responsive: [{
@@ -57,15 +56,15 @@ class StackedBar extends Component {
         },
 
         xaxis: {
-          type: 'category',
+          type: 'numeric',
           categories: this.mockCategory(),
         },
         legend: {
-          position: 'right',
-          offsetY: 40
+          position: 'top',
+          offsetY: 0
         },
         fill: {
-          opacity: 1
+          opacity: 0.5
         }
       },
       series: [{
@@ -92,6 +91,7 @@ class StackedBar extends Component {
           series={this.state.series}
           type="bar"
           width="100%"
+          height="300px"
         />
       </ChartWrapper>
     );
