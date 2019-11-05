@@ -1,5 +1,5 @@
-import React from 'react';
-import './App.css';
+import React from 'react'
+import './App.css'
 
 import StackedBar from './component/chart/StackedBar'
 
@@ -8,11 +8,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         ApexChart
-
         <StackedBar />
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
